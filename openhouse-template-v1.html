@@ -214,12 +214,6 @@
       gap: 0;
       align-items: stretch;
     }
-    .specs__inner--oh {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .specs__inner--oh.has-listing-agent {
-      grid-template-columns: repeat(3, 1fr);
-    }
     .specs__cell {
       padding: 1rem 1.25rem;
       text-align: center;
@@ -232,16 +226,6 @@
       color: #fff;
       line-height: 1.2;
     }
-    .specs__value--oh-name {
-      font-size: clamp(1.05rem, 2.2vw, 1.4rem);
-      line-height: 1.25;
-    }
-    .specs__value--cta-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 3rem;
-    }
     .specs__label {
       font-size: 0.65rem;
       letter-spacing: 0.12em;
@@ -249,24 +233,16 @@
       color: rgba(255, 255, 255, 0.45);
       margin-top: 0.35rem;
     }
-    .specs__sublabel {
-      font-size: 0.6rem;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.06em;
-      margin-top: 0.2rem;
-      line-height: 1.3;
-      text-align: center;
-    }
     .specs__badge {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      padding: 0.45rem 0.85rem;
+      padding: 0.65rem 1.1rem;
       border-radius: 999px;
       background: rgba(201, 169, 110, 0.15);
       border: 1px solid rgba(201, 169, 110, 0.45);
       color: var(--gold);
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -280,6 +256,24 @@
     a.specs__badge.specs__badge--link:hover {
       background: rgba(201, 169, 110, 0.22);
       border-color: rgba(201, 169, 110, 0.6);
+    }
+
+    .host-strip__inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; padding: 0.5rem 0; }
+    .host-strip__agent { display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 0; }
+    .host-strip__photo { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.15); }
+    .host-strip__info { min-width: 0; }
+    .host-strip__label { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.2rem; }
+    .host-strip__name { font-size: clamp(1.15rem, 2.2vw, 1.45rem); font-weight: 700; color: #fff; line-height: 1.2; }
+    .host-strip__sub { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; line-height: 1.3; }
+    .host-strip__contact-wrap { flex-shrink: 0; }
+    .host-strip__contact-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0.6rem 1.25rem; border-radius: 999px; background: rgba(201,169,110,0.15); border: 1px solid rgba(201,169,110,0.45); color: var(--gold); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+    .host-strip__contact-btn:hover { background: rgba(201,169,110,0.22); border-color: rgba(201,169,110,0.6); }
+    .host-strip__listing { flex-shrink: 0; text-align: right; padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,0.1); }
+    .host-strip__listing-name { font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.75); margin-top: 0.2rem; }
+    .host-strip__listing-brokerage { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 0.15rem; }
+    @media (max-width: 640px) {
+      .host-strip__inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .host-strip__listing { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-left: 0; padding-top: 0.75rem; text-align: left; width: 100%; }
     }
 
     /* Match listing .section-dark2 behind .h-card — #0d1117 swallows rgba(255,255,255,0.04); #161c24 lets the same wash read as a lifted panel */
@@ -339,11 +333,11 @@
     }
 
     .section-light {
-      background: var(--bg);
+      background: var(--bg-dark-2);
       padding: 4.5rem 1.5rem;
     }
     .section-light .eyebrow {
-      color: var(--muted);
+      color: var(--gold);
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
@@ -353,7 +347,7 @@
     .section-light h2 {
       font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 800;
-      color: var(--text);
+      color: #fff;
       margin-bottom: 2rem;
     }
     .gallery-block {
@@ -401,16 +395,16 @@
       font-family: var(--font-display);
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--text);
-      background: var(--bg-light);
-      border: 1px solid var(--border);
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.2s, border-color 0.2s;
     }
     .gallery-expand-btn:hover {
-      background: #fff;
-      border-color: var(--muted);
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
     }
 
     .section-details {
@@ -582,11 +576,12 @@
     .oh-agent__contact:hover { text-decoration: underline; }
 
     .section-plans {
-      background: var(--bg-light);
+      background: var(--bg-dark);
+      color: #fff;
       padding: 4.5rem 1.5rem;
     }
     .section-plans .eyebrow {
-      color: var(--muted);
+      color: var(--gold);
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
@@ -596,7 +591,7 @@
     .section-plans h2 {
       font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 800;
-      color: var(--text);
+      color: #fff;
       margin-bottom: 1.5rem;
     }
     .fp-tabs {
@@ -607,25 +602,25 @@
     }
     .fp-tab {
       padding: 0.6rem 1.25rem;
-      border: 1px solid var(--border);
-      background: #fff;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
       border-radius: 4px;
       font-family: var(--font-display);
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
-      color: var(--body);
+      color: rgba(255,255,255,0.75);
       transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
-    .fp-tab:hover { border-color: var(--blue); color: var(--text); }
+    .fp-tab:hover { border-color: var(--blue); color: #fff; }
     .fp-tab.is-active {
-      background: var(--bg-dark);
+      background: var(--blue);
       color: #fff;
-      border-color: var(--bg-dark);
+      border-color: var(--blue);
     }
     .fp-viewer {
       max-width: 1000px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 4px;
       overflow: hidden;
       background: #fff;
@@ -635,18 +630,18 @@
       font-size: 0.95rem;
     }
     .fp-download {
-      color: var(--blue);
+      color: var(--gold);
       font-weight: 600;
       text-decoration: none;
     }
-    .fp-download:hover { color: var(--blue-hover); text-decoration: underline; }
+    .fp-download:hover { color: rgba(201,169,110,0.8); text-decoration: underline; }
 
     .section-location {
-      background: var(--bg);
+      background: var(--bg-dark-2);
       padding: 4.5rem 1.5rem;
     }
     .section-location .eyebrow {
-      color: var(--muted);
+      color: var(--gold);
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
@@ -656,12 +651,12 @@
     .section-location h2 {
       font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 800;
-      color: var(--text);
+      color: #fff;
       margin-bottom: 1rem;
     }
     .section-location .copy {
       max-width: 58ch;
-      color: var(--body);
+      color: rgba(255,255,255,0.72);
       font-size: 1.05rem;
       line-height: 1.75;
     }
@@ -672,10 +667,10 @@
       margin-top: 1.5rem;
       padding: 0.75rem 1.35rem;
       min-height: 48px;
-      background: transparent;
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 4px;
-      color: var(--blue);
+      color: rgba(255,255,255,0.85);
       font-family: var(--font-display);
       font-size: 0.95rem;
       font-weight: 600;
@@ -683,8 +678,8 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .btn-explore-neighbourhood:hover {
-      border-color: var(--blue);
-      color: var(--blue-hover);
+      border-color: rgba(255,255,255,0.4);
+      color: #fff;
     }
 
 
@@ -815,15 +810,6 @@
         grid-column: auto;
       }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .specs__inner--oh {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-      .specs__inner--oh .specs__cell {
-        border-right: none;
-        border-bottom: none;
-      }
       .next-grid { grid-template-columns: 1fr; }
       .facts-row { grid-template-columns: 1fr; }
       .facts-value { text-align: left; }
@@ -873,22 +859,23 @@
     </div>
   </header>
 
-  <section class="specs" id="host-strip" aria-label="Open house host and schedule">
-    <div class="specs__inner specs__inner--oh">
-      <div class="specs__cell">
-        <div class="specs__label">HOSTED BY</div>
-        <div class="specs__value specs__value--oh-name" id="host-strip-name"></div>
-        <div class="specs__sublabel" id="host-strip-sub">Personal Real Estate Corporation</div>
-      </div>
-      <div class="specs__cell">
-        <div class="specs__value specs__value--cta-wrap">
-          <a class="specs__badge specs__badge--link" id="host-strip-contact" href="#">Contact Host</a>
+  <section class="specs" id="host-strip" aria-label="Open house host">
+    <div class="host-strip__inner" id="host-strip-inner">
+      <div class="host-strip__agent">
+        <img class="host-strip__photo" id="host-strip-photo" src="" alt="" hidden>
+        <div class="host-strip__info">
+          <div class="host-strip__label">HOSTED BY</div>
+          <div class="host-strip__name" id="host-strip-name"></div>
+          <div class="host-strip__sub" id="host-strip-sub"></div>
         </div>
       </div>
-      <div class="specs__cell specs__cell--listing" id="host-strip-listing-cell" hidden>
-        <div class="specs__label">LISTED BY</div>
-        <div class="specs__value" id="host-strip-listing-name"></div>
-        <div class="specs__sublabel" id="host-strip-listing-brokerage"></div>
+      <div class="host-strip__contact-wrap">
+        <a class="host-strip__contact-btn" id="host-strip-contact" href="#">Contact Host</a>
+      </div>
+      <div class="host-strip__listing" id="host-strip-listing-cell" hidden>
+        <div class="host-strip__label">LISTED BY</div>
+        <div class="host-strip__listing-name" id="host-strip-listing-name"></div>
+        <div class="host-strip__listing-brokerage" id="host-strip-listing-brokerage"></div>
       </div>
     </div>
   </section>
@@ -941,7 +928,7 @@
   <section class="section-plans" id="floor-plans" hidden>
     <div style="max-width:1000px;margin:0 auto;">
       <p class="eyebrow">Floor plans</p>
-      <h2>Every level, laid out.</h2>
+      <h2>Every level, laid out</h2>
       <div class="fp-tabs" id="fp-tabs" role="tablist" aria-label="Floor plan levels"></div>
       <div class="fp-viewer">
         <img id="fp-image" alt="Floor plan" loading="lazy" style="width:100%;height:auto;display:block;">
@@ -1030,6 +1017,7 @@
     hostName:        'Bil Greene, PREC',
     hostPhone:       '778-817-0110',
     hostEmail:       'info@isellvictoria.ca',
+    hostPhoto: null,
     listingAgent:     null,
     listingBrokerage: null,
     lotSize:         '8,000 sq ft',
@@ -1092,19 +1080,27 @@
   if (ctaDir) { ctaDir.href = CFG.mapDirectionsUrl; }
 
   var hostStripName = document.getElementById('host-strip-name');
+  var hostStripSub = document.getElementById('host-strip-sub');
   var hostStripContact = document.getElementById('host-strip-contact');
-  if (hostStripName) hostStripName.textContent = CFG.hostName.replace(', PREC', '');
+  var hostStripPhoto = document.getElementById('host-strip-photo');
+  if (hostStripName) hostStripName.textContent = CFG.hostName;
   if (hostStripContact) hostStripContact.href = telHref(CFG.hostPhone);
-
+  if (hostStripSub) {
+    hostStripSub.textContent = /PREC/i.test(CFG.hostName) ? 'Personal Real Estate Corporation' : '';
+  }
+  var photoSrc = CFG.hostPhoto || CFG.agentHeadshot || '';
+  if (hostStripPhoto && photoSrc) {
+    hostStripPhoto.src = photoSrc;
+    hostStripPhoto.alt = CFG.hostName;
+    hostStripPhoto.removeAttribute('hidden');
+  }
   if (CFG.listingAgent) {
     var listingCell = document.getElementById('host-strip-listing-cell');
     var listingName = document.getElementById('host-strip-listing-name');
     var listingBrokerage = document.getElementById('host-strip-listing-brokerage');
-    var stripInner = document.querySelector('.specs__inner--oh');
     if (listingCell) listingCell.removeAttribute('hidden');
     if (listingName) listingName.textContent = CFG.listingAgent;
     if (listingBrokerage) listingBrokerage.textContent = CFG.listingBrokerage || '';
-    if (stripInner) stripInner.classList.add('has-listing-agent');
   }
 
   /* Key facts list (omit strata fee when null) */
